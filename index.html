@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dice Roller</title>
+    <style>
+        .mydiv img{
+            position: absolute;
+            transform: translate(-50%,-50%);
+            left: 50%;
+            top: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class='mydiv'>
+        <img src='Dice 0.png' alt='Dice' style='width:250px; height: 250px;' id='dice' onclick="javascript:throwdice();"/>
+    </div>
+    <script type="text/javascript">
+        function throwdice()
+        {
+            var inv1 = setInterval(()=>{
+                var r = Math.floor(Math.random()*6)+1;
+                var pic = 'Dice '+ r.toString()+'.png';
+                document.getElementById('dice').src = pic;	
+                document.getElementById('dice-no').innerHTML = r;
+            },50);
+            var inv2 = setInterval(()=>{
+                var r = Math.floor(Math.random()*6)+1;
+                var pic = 'Dice '+ r.toString()+'.png';
+                document.getElementById('dice').src = pic;	
+                document.getElementById('dice-no').innerHTML = r;
+            },100);
+            var inv3 = setInterval(()=>{
+                var r = Math.floor(Math.random()*6)+1;
+                var pic = 'Dice '+ r.toString()+'.png';
+                document.getElementById('dice').src = pic;	
+                document.getElementById('dice-no').innerHTML = r;
+            },200);
+            setTimeout(()=>{ clearInterval(inv1);},800);
+            setTimeout(()=>{ clearInterval(inv2);},800);
+            setTimeout(()=>{ clearInterval(inv3);},1400);
+        }
+    </script>
+</body>
+</html>
